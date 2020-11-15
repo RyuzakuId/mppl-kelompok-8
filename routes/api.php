@@ -18,8 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/artikels', 'ArtikelController@index');
-Route::post('/artikel/store', 'ArtikelController@store');
-Route::get('/artikel/{id}', 'ArtikelController@show');
-Route::post('/artikel/update/{id}', 'ArtikelController@update');
-Route::delete('/artikel/{id}', 'ArtikelController@destroy');
+Route::prefix('artikel')->group(function () {
+    Route::get('/', 'ArtikelController@index');
+    Route::post('/store', 'ArtikelController@store');
+    Route::get('/show/{id}', 'ArtikelController@show');
+    Route::post('/update/{id}', 'ArtikelController@update');
+    Route::delete('/delete/{id}', 'ArtikelController@destroy');
+});

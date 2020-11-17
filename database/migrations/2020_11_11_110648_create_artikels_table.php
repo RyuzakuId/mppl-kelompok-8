@@ -17,7 +17,7 @@ class CreateArtikelsTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('isi');
-            $table->string('img_dir');
+            $table->string('img_dir')->nullable();
             $table->timestamps();
         });
     }

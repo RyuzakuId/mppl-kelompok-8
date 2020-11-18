@@ -25,3 +25,11 @@ Route::prefix('artikels')->group(function () {
     Route::put('/{id}', 'ArtikelController@update');
     Route::delete('/{id}', 'ArtikelController@destroy');
 });
+
+Route::prefix('portofolios')->group(function () {
+    Route::get('/', 'PortofolioController@get_all_porto');
+    Route::get('/{id}', 'PortofolioController@get_porto');
+    Route::get('/categories/{cat_id}', 'PortofolioController@get_porto_by_cat');
+    Route::post('/', 'PortofolioController@store');
+    Route::delete('/{id}', 'PortofolioController@destroy');
+});

@@ -18,7 +18,7 @@ class ArtikelController extends Controller
         $artikels = Artikel::latest()->get();
         return response()->json([
             'success' => true,
-            'message' => 'list semua artikel',
+            'message' => 'List Semua Artikel',
             'data' => $artikels
         ], 200);
     }
@@ -41,7 +41,7 @@ class ArtikelController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'artikel tersimpan!',
+            'message' => 'Artikel Tersimpan',
             'data'    => $artikel
         ], 201);
     }
@@ -59,7 +59,7 @@ class ArtikelController extends Controller
         if ($artikel) {
             return response()->json([
                 'success' => true,
-                'message' => 'Detail artikel!',
+                'message' => 'Detail Artikel',
                 'data'    => $artikel
             ], 200);
         } else {

@@ -27,3 +27,5 @@ Route::get('contact', 'WebsiteController@showContactForm')->name('contact.show')
 Route::post('contact', 'WebsiteController@submitContactForm')->name('contact.submit');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('/test', 'PortofolioController@get_all_porto');

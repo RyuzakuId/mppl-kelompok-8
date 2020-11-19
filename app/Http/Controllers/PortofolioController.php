@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
 use App\Portofolio;
 
 class PortofolioController extends Controller
@@ -28,25 +27,6 @@ class PortofolioController extends Controller
                 'success' => true,
                 'message' => 'Detail Portofolio',
                 'data'    => $portofolio
-            ], 200);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Portofolio Tidak Ditemukan',
-                'data'    => ''
-            ], 404);
-        }
-    }
-
-    public function get_porto_by_cat ($cat_id)
-    {
-        $category = Category::whereId($cat_id)->first();
-
-        if($category){
-            return response()->json([
-                'success' => true,
-                'message' => 'Detail Portofolio',
-                'data'    => $category->portofolios
             ], 200);
         } else {
             return response()->json([

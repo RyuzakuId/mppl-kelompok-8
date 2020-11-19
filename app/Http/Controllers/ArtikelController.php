@@ -92,6 +92,11 @@ class ArtikelController extends Controller
                 'success' => true,
                 'message' => 'Artikel Berhasil Diupdate!'
             ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Artikel Tidak Ditemukan!'
+            ], 404);
         }
     }
 
